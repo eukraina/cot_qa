@@ -3,7 +3,7 @@
 [BEGIN_COT_EXT]
 Code=ratingslike
 Name=Ratings like
-Category=customization-i18n
+Category=post-install
 Description=Change standart stars rating plugin to like ratings for questions and answers
 Version=1.0
 Date=2013-01-08
@@ -15,7 +15,7 @@ Lock_guests=12345A
 Auth_members=RW
 Lock_members=
 Requires_modules=page
-Requires_plugins=ratings
+Requires_plugins=ratings,comments
 [END_COT_EXT]
 ==================== */
 
