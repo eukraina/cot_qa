@@ -19,9 +19,9 @@ if ($db->fieldExists($db_com, "com_state"))
 	$where_topexperts = ' AND c.com_state=0';
 }
 
-$topexps = $db->query("SELECT u.* FROM $db_com as c
+$topexps = $db->query("SELECT u.* , SUM(c.com_rating) as sum FROM $db_com as c
 	LEFT JOIN $db_users as u ON u.user_id=c.com_authorid 
-	WHERE c.com_rating>0 $where_topexperts GROUP BY com_authorid LIMIT ".$cfg['plugin']['topexperts']['limit'])->fetchAll();
+	WHERE c.com_rating>0 $where_topexperts GROUP BY com_authorid ORDER BY sum DESC LIMIT ".$cfg['plugin']['topexperts']['limit'])->fetchAll();
 
 $topexp_count = count($topexps);	
 
